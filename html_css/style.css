@@ -1,0 +1,19 @@
+/* external > user > browser > internal > inline */
+* {
+    box-sizing: border-box;
+}
+
+.col {
+    float: left;
+    margin-left: 5%;
+}
+
+.col-1, .col-2, .col-3, .col-4, .col-5, .col-6 {
+    width: 50%;
+}
+
+.row::after {
+    clear: both;
+    content: '';
+    display: table;
+}
