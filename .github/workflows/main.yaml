@@ -1,0 +1,28 @@
+defaults:
+  run:
+    working-directory: aspnet
+
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: dotnet restore
+      - run: dotnet build
+
+
+  test:
+    runs-on: ubuntu-20.04
+      # matrix:
+      #   - ubuntu-20.04
+      #   - win10
+      #   - macos11
+    steps:
+      - run: dotnet test
+
+  pack:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: dotnet publish
+
+
+on: push
